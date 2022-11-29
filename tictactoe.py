@@ -1,4 +1,4 @@
-
+import os
 
 board = ["  -  ","  -  ","  -  ",
         "  -  ","  -  ","  -  ",
@@ -17,7 +17,7 @@ gameRunning = True
 # Game Start
 
 def gameStart(start):
-
+    os.system('cls')
     print("|                                                                                                        |")
     print("|","="*102,"|")
     print("|                                       === Welcome to TicTacToe! ===                                    |")
@@ -175,7 +175,10 @@ def checkTie(board):
         print("|","                                         === It's a tie ===                                          |")
         print("|","="*102,"|")
         print("|                                                                                                        |")
-
+        
+        player_answer = input("Press enter to try again... ")
+        gameStart()
+        
         gameRunning = False
 
 
@@ -187,7 +190,10 @@ def checkerWinner():
         print("|",f"                                    === The Winner is",winner,"===                                        |")
         print("|","="*102,"|")
         print("|                                                                                                        |")
-
+        
+        player_answer = input("Press enter to go back to menu... ")
+        import main
+        main()
         gameRunning = False
 
 
